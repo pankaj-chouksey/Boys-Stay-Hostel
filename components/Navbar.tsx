@@ -50,16 +50,16 @@ export default function Navbar() {
               whileHover={{ scale: 1.1, rotate: 5 }}
               className="relative"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-royal to-navy dark:from-gold dark:to-gold/80 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300">
-                <span className="text-white dark:text-navy font-bold text-xl">BS</span>
+              <div className="w-12 h-12 bg-orange rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300">
+                <span className="text-white font-bold text-xl">BS</span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-gold to-gold/50 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-orange/50 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"></div>
             </motion.div>
             <motion.span
-              className={`text-2xl font-bold bg-clip-text ${
+              className={`text-2xl font-bold ${
                 scrolled
-                  ? 'bg-gradient-to-r from-royal to-gold dark:from-gold dark:to-royal text-transparent'
-                  : 'text-white dark:text-white'
+                  ? 'text-black'
+                  : 'text-white'
               }`}
               whileHover={{ scale: 1.05 }}
             >
@@ -80,12 +80,12 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative px-4 py-2 text-sm font-medium rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group ${
                     scrolled 
-                      ? 'text-navy dark:text-white' 
-                      : 'text-white dark:text-white'
+                      ? 'text-black' 
+                      : 'text-white'
                   }`}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold to-royal group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             ))}
@@ -103,9 +103,9 @@ export default function Navbar() {
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
-                <Moon className={`w-5 h-5 ${scrolled ? 'text-navy' : 'text-white'}`} />
+                <Moon className={`w-5 h-5 ${scrolled ? 'text-black' : 'text-white'}`} />
               ) : (
-                <Sun className="w-5 h-5 text-gold" />
+                <Sun className="w-5 h-5 text-orange" />
               )}
             </motion.button>
             
@@ -131,9 +131,9 @@ export default function Navbar() {
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
-                <Moon className={`w-5 h-5 ${scrolled ? 'text-navy' : 'text-white'}`} />
+                <Moon className={`w-5 h-5 ${scrolled ? 'text-black' : 'text-white'}`} />
               ) : (
-                <Sun className="w-5 h-5 text-gold" />
+                <Sun className="w-5 h-5 text-orange" />
               )}
             </motion.button>
             <motion.button

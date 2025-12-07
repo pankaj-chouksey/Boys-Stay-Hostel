@@ -10,38 +10,56 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Cyprus & Sand Dune Color Palette
+        // Premium Color Palette - Black, Orange, Light Gray, White
+        black: {
+          DEFAULT: '#000000',
+          soft: '#0A0A0A',
+          light: '#1A1A1A',
+        },
+        orange: {
+          DEFAULT: '#FF6B35',
+          dark: '#E55A2B',
+          light: '#FF8C5A',
+          vibrant: '#FF5722',
+        },
+        gray: {
+          light: '#E5E5E5',
+          medium: '#D3D3D3',
+          dark: '#B0B0B0',
+        },
+        white: {
+          DEFAULT: '#FFFFFF',
+          soft: '#FAFAFA',
+        },
+        // Semantic Colors
         primary: {
-          DEFAULT: '#004643',      // CYPRUS - Dark Teal
-          dark: '#00332f',          // Darker shade
-          light: '#005d57',         // Lighter shade
+          DEFAULT: '#000000',
+          dark: '#0A0A0A',
+          light: '#1A1A1A',
         },
         secondary: {
-          DEFAULT: '#004643',       // CYPRUS - Dark Teal
-          dark: '#00332f',           // Darker shade
-          light: '#005d57',          // Lighter shade
+          DEFAULT: '#FF6B35',
+          dark: '#E55A2B',
+          light: '#FF8C5A',
         },
         accent: {
-          DEFAULT: '#004643',       // CYPRUS - Dark Teal
-          dark: '#00332f',          // Darker shade
-          light: '#005d57',          // Lighter shade
+          DEFAULT: '#FF5722',
+          dark: '#E55A2B',
+          light: '#FF8C5A',
         },
         neutral: {
-          DEFAULT: '#F0EDE5',       // SAND DUNE - Light Cream
-          dark: '#004643',           // CYPRUS for dark mode
-          medium: '#d4d0c8',         // Medium shade of Sand Dune
+          DEFAULT: '#E5E5E5',
+          dark: '#B0B0B0',
+          medium: '#D3D3D3',
         },
-        // Legacy support (mapped to new colors)
-        navy: '#004643',            // CYPRUS
-        royal: '#004643',           // CYPRUS
-        gold: '#F0EDE5',            // SAND DUNE (for accents on dark backgrounds)
-        // New palette colors
-        cyprus: '#004643',
-        'sand-dune': '#F0EDE5',
+        background: {
+          DEFAULT: '#FFFFFF',
+          alt: '#FAFAFA',
+        },
       },
       fontFamily: {
-        display: ['Inter', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'system-ui', 'sans-serif'],
+        body: ['Poppins', 'system-ui', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',
@@ -66,7 +84,6 @@ const config: Config = {
         'float-fast': 'floating 4s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'shimmer': 'shimmer 2s linear infinite',
-        'gradient': 'gradient-shift 3s ease infinite',
       },
       keyframes: {
         fadeIn: {
@@ -105,10 +122,6 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
           '33%': { transform: 'translateY(-20px) rotate(2deg)' },
           '66%': { transform: 'translateY(-10px) rotate(-2deg)' },
-        },
-        'gradient-shift': {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-1000px 0' },

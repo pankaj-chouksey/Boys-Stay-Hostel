@@ -3,29 +3,38 @@
 @tailwind utilities;
 
 :root {
-  /* Cyprus & Sand Dune Color Palette */
-  --primary: #004643;
-  --primary-dark: #00332f;
-  --primary-light: #005d57;
-  --secondary: #004643;
-  --secondary-dark: #00332f;
-  --secondary-light: #005d57;
-  --accent: #004643;
-  --accent-dark: #00332f;
-  --accent-light: #005d57;
-  --neutral: #F0EDE5;
-  --neutral-dark: #004643;
-  --neutral-medium: #d4d0c8;
+  /* Premium Color Palette - Black, Orange, Light Gray, White */
+  --black: #000000;
+  --black-soft: #0A0A0A;
+  --black-light: #1A1A1A;
+  --orange: #FF6B35;
+  --orange-dark: #E55A2B;
+  --orange-light: #FF8C5A;
+  --orange-vibrant: #FF5722;
+  --gray-light: #E5E5E5;
+  --gray-medium: #D3D3D3;
+  --gray-dark: #B0B0B0;
   --white: #FFFFFF;
+  --white-soft: #FAFAFA;
   
-  /* Legacy support */
-  --navy: #004643;
-  --royal: #004643;
-  --gold: #F0EDE5;
-  
-  /* New palette colors */
-  --cyprus: #004643;
-  --sand-dune: #F0EDE5;
+  /* Semantic Colors */
+  --primary: var(--black);
+  --primary-dark: var(--black-soft);
+  --primary-light: var(--black-light);
+  --secondary: var(--orange);
+  --secondary-dark: var(--orange-dark);
+  --secondary-light: var(--orange-light);
+  --accent: var(--orange-vibrant);
+  --accent-dark: var(--orange-dark);
+  --accent-light: var(--orange-light);
+  --neutral: var(--gray-light);
+  --neutral-dark: var(--gray-dark);
+  --neutral-medium: var(--gray-medium);
+  --background: var(--white);
+  --background-alt: var(--white-soft);
+  --text-primary: var(--black);
+  --text-secondary: var(--black-light);
+  --text-inverse: var(--white);
   
   /* Spacing System */
   --space-xs: 0.5rem;
@@ -35,10 +44,49 @@
   --space-xl: 3rem;
   --space-2xl: 4rem;
   --space-3xl: 6rem;
+  --space-4xl: 8rem;
   
-  /* Typography */
-  --font-display: 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  /* Premium Typography Scale - Large & Small with Thin & Normal */
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
+  
+  /* Large Typography - Thin Weight */
+  --text-display-xl: 4.5rem;      /* 72px - Extra Large Display */
+  --text-display-lg: 3.5rem;      /* 56px - Large Display */
+  --text-display-md: 2.75rem;     /* 44px - Medium Display */
+  --text-display-sm: 2.25rem;     /* 36px - Small Display */
+  --font-weight-thin: 300;
+  
+  /* Large Typography - Normal Weight */
+  --text-heading-xl: 3rem;        /* 48px - Extra Large Heading */
+  --text-heading-lg: 2.25rem;     /* 36px - Large Heading */
+  --text-heading-md: 1.875rem;    /* 30px - Medium Heading */
+  --text-heading-sm: 1.5rem;      /* 24px - Small Heading */
+  --font-weight-normal: 400;
+  
+  /* Small Typography - Thin Weight */
+  --text-body-thin-lg: 1.125rem;  /* 18px - Large Body Thin */
+  --text-body-thin: 1rem;         /* 16px - Body Thin */
+  --text-body-thin-sm: 0.875rem;  /* 14px - Small Body Thin */
+  --text-body-thin-xs: 0.75rem;   /* 12px - Extra Small Body Thin */
+  
+  /* Small Typography - Normal Weight */
+  --text-body-lg: 1.125rem;       /* 18px - Large Body */
+  --text-body: 1rem;              /* 16px - Body */
+  --text-body-sm: 0.875rem;       /* 14px - Small Body */
+  --text-body-xs: 0.75rem;        /* 12px - Extra Small Body */
+  
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.03em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.05em;
 }
 
 * {
@@ -53,19 +101,153 @@ html {
 }
 
 body {
-  @apply bg-[#F0EDE5] dark:bg-cyprus text-cyprus dark:text-[#F0EDE5] transition-colors duration-500;
+  @apply bg-white text-black transition-colors duration-500;
   font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Modern Typography */
-h1, h2, h3, h4, h5, h6 {
+/* Premium Typography System - Large & Small with Thin & Normal */
+
+/* Display Text - Large, Thin Weight */
+.display-xl {
+  font-size: var(--text-display-xl);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+}
+
+.display-lg {
+  font-size: var(--text-display-lg);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-family: var(--font-display);
+}
+
+.display-md {
+  font-size: var(--text-display-md);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  font-family: var(--font-display);
+}
+
+.display-sm {
+  font-size: var(--text-display-sm);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  font-family: var(--font-display);
+}
+
+/* Heading Text - Large, Normal Weight */
+h1, .heading-xl {
+  font-size: var(--text-heading-xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+}
+
+h2, .heading-lg {
+  font-size: var(--text-heading-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+}
+
+h3, .heading-md {
+  font-size: var(--text-heading-md);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+}
+
+h4, .heading-sm {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+}
+
+/* Body Text - Small, Thin Weight */
+.body-thin-lg {
+  font-size: var(--text-body-thin-lg);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+.body-thin {
+  font-size: var(--text-body-thin);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+.body-thin-sm {
+  font-size: var(--text-body-thin-sm);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+.body-thin-xs {
+  font-size: var(--text-body-thin-xs);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Body Text - Small, Normal Weight */
+.body-lg {
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+.body {
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+.body-sm {
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+}
+
+.body-xs {
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Default paragraph styling */
+p {
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
 }
 
 /* Glassmorphism Utility */
@@ -112,9 +294,31 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
-    background-size: 200% auto;
-    animation: gradient-shift 3s ease infinite;
+    color: var(--orange);
+  }
+  
+  .text-orange {
+    color: var(--orange);
+  }
+  
+  .text-orange-vibrant {
+    color: var(--orange-vibrant);
+  }
+  
+  .bg-orange {
+    background-color: var(--orange);
+  }
+  
+  .bg-orange-vibrant {
+    background-color: var(--orange-vibrant);
+  }
+  
+  .bg-black {
+    background-color: var(--black);
+  }
+  
+  .bg-gray-light {
+    background-color: var(--gray-light);
   }
   
   .card-hover {
@@ -156,14 +360,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Premium Animations */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
 
 @keyframes floating {
   0%, 100% {
@@ -225,32 +421,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-[#F0EDE5] dark:bg-cyprus;
+  background-color: var(--gray-light);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-primary to-secondary rounded-full;
-  border: 2px solid transparent;
-  background-clip: padding-box;
+  background-color: var(--orange);
+  border-radius: 10px;
+  border: 2px solid var(--gray-light);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply from-accent to-primary;
+  background-color: var(--orange-vibrant);
 }
 
 /* Selection */
 ::selection {
-  @apply bg-accent text-white;
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 ::-moz-selection {
-  @apply bg-accent text-white;
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 /* Smooth Focus States */
 *:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--orange);
   outline-offset: 4px;
   border-radius: 4px;
 }

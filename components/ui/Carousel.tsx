@@ -54,7 +54,7 @@ export default function Carousel({ images, autoPlay = true, interval = 5000 }: C
             className="object-cover"
             priority={currentIndex === 0}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </motion.div>
       </AnimatePresence>
 

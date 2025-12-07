@@ -19,7 +19,7 @@ export default function Card({ children, className = '', hover = true, delay = 0
       transition={{ duration: 0.6, delay }}
       whileHover={hover ? { y: -12, scale: 1.02 } : {}}
       className={`
-        bg-white dark:bg-gray-800 rounded-3xl p-6 md:p-8
+        bg-white rounded-3xl p-6 md:p-8
         premium-shadow hover:premium-shadow-lg
         transition-all duration-400 ease-out
         ${hover ? 'card-hover' : ''}
