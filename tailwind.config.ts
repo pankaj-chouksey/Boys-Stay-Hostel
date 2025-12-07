@@ -10,31 +10,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Professional Color Palette
+        // Cyprus & Sand Dune Color Palette
         primary: {
-          DEFAULT: '#1e3a5f',      // Deep Professional Blue
-          dark: '#0f1f3a',          // Darker shade
-          light: '#2d4a6f',         // Lighter shade
+          DEFAULT: '#004643',      // CYPRUS - Dark Teal
+          dark: '#00332f',          // Darker shade
+          light: '#005d57',         // Lighter shade
         },
         secondary: {
-          DEFAULT: '#475569',       // Slate Gray
-          dark: '#334155',           // Darker slate
-          light: '#64748b',          // Lighter slate
+          DEFAULT: '#004643',       // CYPRUS - Dark Teal
+          dark: '#00332f',           // Darker shade
+          light: '#005d57',          // Lighter shade
         },
         accent: {
-          DEFAULT: '#0d9488',       // Professional Teal
-          dark: '#0f766e',          // Darker teal
-          light: '#14b8a6',          // Lighter teal
+          DEFAULT: '#004643',       // CYPRUS - Dark Teal
+          dark: '#00332f',          // Darker shade
+          light: '#005d57',          // Lighter shade
         },
         neutral: {
-          DEFAULT: '#f8fafc',       // Light Gray
-          dark: '#1e293b',           // Dark Gray
-          medium: '#64748b',         // Medium Gray
+          DEFAULT: '#F0EDE5',       // SAND DUNE - Light Cream
+          dark: '#004643',           // CYPRUS for dark mode
+          medium: '#d4d0c8',         // Medium shade of Sand Dune
         },
         // Legacy support (mapped to new colors)
-        navy: '#1e3a5f',
-        royal: '#475569',
-        gold: '#0d9488',
+        navy: '#004643',            // CYPRUS
+        royal: '#004643',           // CYPRUS
+        gold: '#F0EDE5',            // SAND DUNE (for accents on dark backgrounds)
+        // New palette colors
+        cyprus: '#004643',
+        'sand-dune': '#F0EDE5',
       },
       fontFamily: {
         display: ['Inter', 'system-ui', 'sans-serif'],

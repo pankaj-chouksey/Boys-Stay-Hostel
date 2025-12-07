@@ -56,7 +56,11 @@ export default function Navbar() {
               <div className="absolute inset-0 bg-gradient-to-br from-gold to-gold/50 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"></div>
             </motion.div>
             <motion.span
-              className="text-2xl font-bold bg-gradient-to-r from-royal to-gold dark:from-gold dark:to-royal bg-clip-text text-transparent"
+              className={`text-2xl font-bold bg-clip-text ${
+                scrolled
+                  ? 'bg-gradient-to-r from-royal to-gold dark:from-gold dark:to-royal text-transparent'
+                  : 'text-white dark:text-white'
+              }`}
               whileHover={{ scale: 1.05 }}
             >
               Boys Stay Hostel
@@ -74,7 +78,11 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="relative px-4 py-2 text-sm font-medium text-navy dark:text-white rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
+                  className={`relative px-4 py-2 text-sm font-medium rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group ${
+                    scrolled 
+                      ? 'text-navy dark:text-white' 
+                      : 'text-white dark:text-white'
+                  }`}
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold to-royal group-hover:w-full transition-all duration-300"></span>
@@ -87,11 +95,15 @@ export default function Navbar() {
               onClick={toggleTheme}
               whileHover={{ scale: 1.1, rotate: 15 }}
               whileTap={{ scale: 0.9 }}
-              className="ml-4 p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className={`ml-4 p-2.5 rounded-xl transition-colors ${
+                scrolled 
+                  ? 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700' 
+                  : 'bg-white/10 dark:bg-gray-800 backdrop-blur-sm hover:bg-white/20'
+              }`}
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
-                <Moon className="w-5 h-5 text-navy" />
+                <Moon className={`w-5 h-5 ${scrolled ? 'text-navy' : 'text-white'}`} />
               ) : (
                 <Sun className="w-5 h-5 text-gold" />
               )}
@@ -115,11 +127,11 @@ export default function Navbar() {
             <motion.button
               onClick={toggleTheme}
               whileTap={{ scale: 0.9 }}
-              className="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800"
+              className={`p-2.5 rounded-xl ${scrolled ? 'bg-gray-100 dark:bg-gray-800' : 'bg-white/10 dark:bg-gray-800 backdrop-blur-sm'}`}
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
-                <Moon className="w-5 h-5 text-navy" />
+                <Moon className={`w-5 h-5 ${scrolled ? 'text-navy' : 'text-white'}`} />
               ) : (
                 <Sun className="w-5 h-5 text-gold" />
               )}
@@ -127,10 +139,14 @@ export default function Navbar() {
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.9 }}
-              className="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800"
+              className={`p-2.5 rounded-xl ${scrolled ? 'bg-gray-100 dark:bg-gray-800' : 'bg-white/10 dark:bg-gray-800 backdrop-blur-sm'}`}
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className={`w-6 h-6 ${scrolled ? 'text-navy dark:text-white' : 'text-white'}`} />
+              ) : (
+                <Menu className={`w-6 h-6 ${scrolled ? 'text-navy dark:text-white' : 'text-white'}`} />
+              )}
             </motion.button>
           </div>
         </div>
